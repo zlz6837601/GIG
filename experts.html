@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GUANGZHOU INSTITUTE OF GBA --- Experts</title>
+    <link rel="stylesheet" href="css/edu.css">
+    <link rel="stylesheet" href="./css/en.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        .leftTitle.active {
+            color: rgb(15, 66, 155) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <div class="top mian">
+                <img src="images/top.png" class="topimg">
+                <img src="images/menu-icon-arrow.png" class="Mmenu" data-c="0" onclick="showmenu()">
+            </div>
+            <nav>
+                <ul class="mian menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li>
+                        <a href="#">Events</a>
+
+                    </li>
+                    <li>
+                        <a href="">Experts</a>
+                        <ul class="subul">
+                            <li><a href="./experts.html?type=1">Board of Directors</a></li>
+                            <li><a href="./experts.html?type=2" style="font-size: 14px;">Advisory Committee</a></li>
+                            <li><a href="./experts.html?type=3">Research Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Programs</a></li>
+                    <li>
+                        <a href="#">About us</a>
+                        <ul class="subul">
+                            <li><a href="./about.html?type=1" style="font-size: 14px;">Introduction of GIG</a></li>
+                            <li><a href="./about.html?type=2">Chairman's Address</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">前往中文首页</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="mian">
+            <img src="images/list_banner.jpg" width="100%" class="list_banner">
+        </div>
+        <div class="listContentFull" style="margin-bottom: 50px">
+            <div class="listContent mian">
+                <div class="listTitle">
+                    <h1>Experts</h1>
+                    <ul>
+                        <li><a href="./experts.html?type=1" class="leftTitle"
+                                style="color: rgb(51, 51, 51);">理事会</a></li>
+                        <li><a href="./experts.html?type=2" class="leftTitle"
+                                style="color: rgb(51, 51, 51);">顾问委员会</a></li>
+                        <li><a href="./experts.html?type=3" class="leftTitle"
+                                style="color: rgb(51, 51, 51);">研究团队</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- 理事会 -->
+                <div class="listC"></div>
+            </div>
+        </div>
+
+
+        <div class="footer">Copyright@广州粤港澳大湾区研究院版权所有 <a href="https://beian.miit.gov.cn/"
+                target="new">粤ICP备2021176660号</a> </div>
+
+    </div>
+
+
+    <script>
+        $(function(){
+          
+            var pageType = QueryString('type');
+            if(pageType == '1'||pageType == '2'||pageType == '3'){
+                pageType = Number(pageType)
+                $(".listTitle li").eq(pageType-1).find('.leftTitle').addClass("active").attr("href","javascript:void(0)");
+                
+                var mainHtml = $.ajax({
+                    url:'./html/experts'+pageType+'.html',
+                    type:'get',
+                    success:function(res){
+                        $(".listC").html(res)
+                    }
+                })
+            }
+            
+            
+
+
+            function QueryString(name) {
+                var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.menu {
+    position: relative;
+    z-index: 9;
+}
+.menu li {
+    height: 0.93rem;
+}
+.subul {
+    display: none;
+}
+.mian>li:hover {
+    height: auto;
+}
+.mian>li:hover .subul {
+    display: block;
+
+}
+.subul li:hover {
+    background: #1a90f1;
+}

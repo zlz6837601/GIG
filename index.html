@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GUANGZHOU INSTITUTE OF GBA</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/edu.css">
+    <link rel="stylesheet" href="./css/en.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <style>
+        .banner {
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+            list-style: none;
+            padding: 0;
+            z-index: 1;
+        }
+        .swiper-prevBtn {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #fff;
+            transition: all .5s;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 50px;
+            bottom: 0;
+            margin: auto;
+            z-index: 10;
+            background: url('./images/leftBtn.png') no-repeat 50%;
+            box-sizing: border-box;
+        }
+        .swiper-nextBtn {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #fff;
+            transition: all .5s;
+            cursor: pointer;
+            position: absolute;
+            right: 50px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 10;
+            background: url('./images/rightBtn.png') no-repeat 50%;
+            box-sizing: border-box;
+        }
+        .swiper-nextBtn:hover {
+            border: 1px solid #ff7500;
+            background-color: #ff7500;
+            background-position: 30px;
+        }
+        .swiper-prevBtn:hover {
+            border: 1px solid #ff7500;
+            background-color: #ff7500;
+            background-position: 8px;
+        }
+        .partnerLine {
+            display: flex;
+            cursor: default;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .leftLine {
+            display: inline-block;
+            width: 100px;
+            height: 2px;
+            background: #c3cdda;
+        }
+
+        .centerWord {
+            color: #cfcfcf;
+            font-size: 24px;
+            margin: 0 20px;
+        }
+
+        .rightLine {
+            display: inline-block;
+            width: 100px;
+            height: 2px;
+            background: #c3cdda;
+        }
+
+        .eventsBox img {
+            display: block;
+            width: 100%;
+        }
+
+        .leftBox {
+            float: left;
+            width: 6.12rem;
+        }
+
+        .rightBox {
+            float: left;
+            width: 7rem;
+            margin-left: 0.3rem;
+        }
+        .tabSwiper {
+            position: relative;
+            /* width: 13.4rem; */
+            /* height: 500px; */
+        }
+        .swiper-pagination {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 60px;
+            z-index: 100;
+        }
+        .swiper-pagination .ul {
+            display: flex;
+            justify-content: center;
+        }
+        .swiper-pagination .ul .li {
+            width: 186px;
+            height: 124px;
+            background-color: rgba(0,0,0,.5);
+            border-radius: 15px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color .3s;
+            font-size: 20px;
+        }
+        .swiper-pagination .ul .li a {
+            padding: 27px 30px 0;
+        }
+        .swiper-pagination .ul .li.active {
+            background: #ffa800;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <div class="top mian" style="margin: 0 0 0 50px;">
+                <img src="images/top.png" class="topimg">
+                <img src="images/menu-icon-arrow.png" class="Mmenu" data-c="0" onclick="showmenu()">
+            </div>
+            <nav>
+                <ul class="mian menu">
+                    <li><a href="./index.html">Home</a></li>
+                    <li>
+                        <a href="#">Events</a>
+
+                    </li>
+                    <li>
+                        <a href="">Experts</a>
+                        <ul class="subul">
+                            <li><a href="./experts.html?type=1">Board of Directors</a></li>
+                            <li><a href="./experts.html?type=2" style="font-size: 14px;">Advisory Committee</a></li>
+                            <li><a href="./experts.html?type=3">Research Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Programs</a></li>
+                    <li>
+                        <a href="#">About us</a>
+                        <ul class="subul">
+                            <li><a href="./about.html?type=1" style="font-size: 14px;">Introduction of GIG</a></li>
+                            <li><a href="./about.html?type=2">Chairman's Address</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">前往中文首页</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="banner" style="width:100%">
+
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/banner1.jpg" style="width:100%;height:100%;display: block;">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/banner2.jpg" style="width:100%;height:100%;display: block;">
+                </div>
+            </div>
+            <div class="swiper-prevBtn"></div>
+            <div class="swiper-nextBtn"></div>
+        </div>
+        <!-- <div class="mian">
+            <div class="partnerLine" style="margin: 0.2rem;">
+                <div class="leftLine"></div>
+                <div class="centerWord">Events</div>
+                <div class="rightLine"></div>
+            </div>
+            <div class="eventsBox">
+                <div class="leftBox">
+                    <img src="./images/111.png">
+                </div>
+                <div class="rightBox">
+                    <div>
+                        <img style="height: 3.55rem;" src="./images/222.png">
+                    </div>
+                    <div style="height: 2rem;">
+                        <img style="height: 2rem;float: left;width: 3.45rem;margin-top: 0.1rem;" src="./images/333.jpg"
+                            alt="">
+                        <img style="height: 2rem;float: left;width: 3.45rem;margin-top: 0.1rem;margin-left: 0.1rem;"
+                            src="./images/444.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="title mian">
+            <!-- <img src="images/title4.png"> -->
+            <div class="partnerLine">
+                <div class="leftLine"></div>
+                <div class="centerWord">tab</div>
+                <div class="rightLine"></div>
+            </div>
+        </div>
+
+        <div class="" style="width: 100%;">
+            <div class="tabSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/events.jpg" style="width:100%;height:100%;display: block;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/222.png" style="width:100%;height:100%;display: block;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/333.jpg" style="width:100%;height:100%;display: block;">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/about-us.jpg" style="width:100%;height:100%;display: block;">
+                    </div>
+                </div>
+                <div class="swiper-pagination">
+                    <div class="auto">
+                        <div class="ul">
+                            <div class="li" data-index="1"><a href="/products/development">
+                                    <div class="ic" style="">
+                                    </div>
+                                    <h4>events</h4>
+                                    <!-- <h5>Real Estate DEVELOPMENT</h5> -->
+                                </a></div>
+                            <div class="li" data-index="2"><a href="/products/construction">
+                                    <div class="ic" style="">
+                                    </div>
+                                    <h4>experts</h4>
+                                    <!-- <h5>Smart Construction</h5> -->
+                                </a></div>
+                            <div class="li" data-index="3"><a href="/products/agriculture">
+                                    <div class="ic" style="">
+                                    </div>
+                                    <h4>programs</h4>
+                                    <!-- <h5>MODERN AGRICULTURE</h5> -->
+                                </a></div>
+                            <div class="li" data-index="4"><a href="/products/catering">
+                                    <div class="ic" style="">
+                                    </div>
+                                    <h4>about us</h4>
+                                    <!-- <h5>Smart Restaurant</h5> -->
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="title mian">
+            <!-- <img src="images/title4.png"> -->
+            <div class="partnerLine">
+                <div class="leftLine"></div>
+                <div class="centerWord">Partners</div>
+                <div class="rightLine"></div>
+            </div>
+        </div>
+        <div class="swiper Partners">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/p1.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p3.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p2.png">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/p4.png">
+                </div>
+            </div>
+        </div>
+        <div class="wrapper main4" id="container-4">
+            <div class="inner">
+                <div class="mod clearfix mian">
+                    <div class="ml">
+                        <div class="post6 post-40 mbox" frag="窗口40">
+                            <div class="tt">
+                                <h3 class="tit"><span frag="标题">CONTACT US</span> </h3>
+                            </div>
+                            <div class="con news_text">
+                                <ul class="news_list clearfix">
+                                    <li class="news n1 clearfix">
+                                        <span class="news_title">Address: F/42 Guangzhou International Port Center </span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mc">
+                        <div class="post6 post-42 mbox" frag="窗口42">
+                            <div class="tt">
+                                <h3 class="tit"><span frag="标题">Scan the QR code to follow us</span> </h3>
+                            </div>
+                            <div class="con news_text">
+                                <ul class="news_list clearfix">
+                                    <li class="news i1 clearfix">
+                                        <div class="news_imgs"><a href="#" target="_blank" title="微信二维码"><img
+                                                    src="http://www.gigba.org.cn/upload/code.png" width="100"
+                                                    height="100"></a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mr">
+                        <div class="post6 post-43 mbox" frag="窗口43">
+                            <div class="tt">
+                                <h3 class="tit"><span frag="标题">Related Links</span> </h3>
+                            </div>
+                            <div class="con news_text">
+                            </div>
+                        </div>
+                        <div class="mlink botlinks">
+                            <div class="links-wrap" frag="窗口80">
+                                <div class="select">
+                                    <p>government website</p>
+                                    <ul>
+                                        <li><a href="http://www.gd.gov.cn/" target="new">广东省人民政府</a></li>
+                                        <li><a href="http://www.gz.gov.cn/" target="new">广州市人民政府</a></li>
+                                    </ul>
+                                </div>
+                                <div class="select">
+                                    <p>partners</p>
+                                    <ul>
+                                        <li><a href=" https://www.acem.sjtu.edu.cn/shine/index.html"
+                                                target="new">上海交通大学中国发展研究院</a></li>
+                                        <li><a href="https://nsd.pku.edu.cn/" target="new">北京大学国家发展研究院</a></li>
+                                        <li><a href="http://www.ipp.org.cn/" target="new">华南理工大学公共政策研究院</a></li>
+                                        <li><a href="https://www.cuhk.edu.cn/" target="new">香港中文大学深圳</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">Copyright@广州粤港澳大湾区研究院版权所有 <a href="https://beian.miit.gov.cn/"
+                target="new">粤ICP备2021176660号</a> </div>
+
+    </div>
+
+
+    <script>
+        $(function () {
+            new Swiper(".Partners", {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                breakpoints: {
+                    300: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                },
+            });
+
+            var bannerSwiper = new Swiper('.banner',{
+                effect: 'fade',
+                speed:1000,
+                slidesPerView: 1,
+                navigation:{
+                    nextEl: '.swiper-nextBtn',
+                    prevEl: '.swiper-prevBtn',
+                },
+                loop: true,
+                autoplay: {
+                    pauseOnMouseEnter: true,
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }
+            })
+
+            var tabSwiper = new Swiper(".tabSwiper", {
+                effect: 'fade',
+                speed:1000,
+                slidesPerView: 1,
+                // spaceBetween: 10,
+                pagination: {
+                    el: '.swiper-pagination',
+                    bulletClass : 'li',
+                    type: 'custom',
+                    renderCustom: function (swiper, current, total) {
+                        // console.log(current);
+                        $('.swiper-pagination .ul .li').removeClass("active")
+                        $('.swiper-pagination .ul .li').eq(current-1).addClass("active")
+                    }
+                },
+                
+                loop: true,
+                autoplay: {
+                    pauseOnMouseEnter: true,
+                    delay: 4000,
+                    disableOnInteraction: false,
+                }
+            });
+
+            $(".swiper-pagination .li").on("mouseenter",function(e){
+                var mouseEvent = $(e.currentTarget);
+                var mouseIndex = Number(mouseEvent.attr('data-index'));
+                $('.swiper-pagination .ul .li').removeClass("active");
+                $('.swiper-pagination .ul .li').eq(mouseIndex-1).addClass("active")
+                tabSwiper.slideTo(mouseIndex, 1000, false);
+            })
+        })
+    </script>
+</body>
+
+</html>
